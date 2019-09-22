@@ -2,6 +2,7 @@
 // other imports
 
 use std::fmt;
+use serde::{Serialize, Deserialize};
 
 //------------------------------------------------------------------------------------------------//
 // own imports
@@ -15,7 +16,7 @@ pub use defaults::StreetType;
 //------------------------------------------------------------------------------------------------//
 // node
 
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Node {
     id: i64,
     coord: geo::Coordinate,
@@ -43,7 +44,7 @@ impl fmt::Display for Node {
 //------------------------------------------------------------------------------------------------//
 // edge
 
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Edge {
     id: i64,
     src_idx: usize,
@@ -86,7 +87,7 @@ impl fmt::Display for Edge {
 //------------------------------------------------------------------------------------------------//
 // graph
 
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Graph {
     nodes: Vec<Node>,
     edges: Vec<Edge>,

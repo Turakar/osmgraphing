@@ -1,7 +1,8 @@
 use std::cmp::Ordering;
 use std::fmt;
+use serde::{Serialize, Deserialize};
 
-#[derive(Copy, Clone, Debug)]
+#[derive(Copy, Clone, Debug, Serialize, Deserialize)]
 pub struct Coordinate {
     pub decimicro_lat: i32,
     pub decimicro_lon: i32,

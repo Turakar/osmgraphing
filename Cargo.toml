@@ -1,6 +1,6 @@
 [package]
 name = "osmgraphing"
-version = "0.5.0"
+version = "0.6.0"
 description = "Playing around with graphs created via parsing OpenStreetMap data"
 edition = "2018"
 
@@ -23,6 +23,8 @@ clap = "2.33" # cmdline-parsing
 env_logger = "0.6" # logging for external use, e.g. main.rs and examples
 log = "0.4"        # logging for internal use, e.g. lib.rs
 osmpbfreader = "0.13" # read osm.pbf-files
+serde = { version = "1.0", features = ["derive"] }  # for Serialization and Deserialization traits
+
 
 [dev-dependencies]
 actix-web = "1.0" # backend-server
